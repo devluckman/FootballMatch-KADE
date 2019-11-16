@@ -1,6 +1,5 @@
 package com.man.hellosport.ui.menu.favorite
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,8 +15,6 @@ import com.man.hellosport.ui.detail.DetailEventActivity
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
 import kotlinx.android.synthetic.main.schedulematch_layout.*
-import kotlinx.android.synthetic.main.schedulematch_layout.txtNodata
-import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.rowParser
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.support.v4.startActivity

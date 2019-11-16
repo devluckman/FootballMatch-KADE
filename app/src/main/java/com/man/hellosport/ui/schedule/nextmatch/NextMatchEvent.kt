@@ -64,13 +64,13 @@ class NextMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(), Sch
     }
 
     override fun hideLoading() {
-        progressbarView.invisible()
-        rvMatchEvent.visible()
+        progressbarView?.invisible()
+        rvMatchEvent?.visible()
     }
 
     override fun showEventList(data: List<Events>) {
         eventNext.addAll(data)
         adapter.notifyDataSetChanged()
-        rvMatchEvent.scrollToPosition(0)
+        rvMatchEvent?.scrollToPosition(0)
     }
 }

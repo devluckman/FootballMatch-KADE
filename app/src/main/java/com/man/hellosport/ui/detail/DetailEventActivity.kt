@@ -2,7 +2,6 @@ package com.man.hellosport.ui.detail
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.man.hellosport.R
 import com.man.hellosport.data.local.Favorite
@@ -42,7 +41,6 @@ class DetailEventActivity : AppCompatActivity(), DetailEventContract {
         imgBack.setOnClickListener {
             onBackPressed()
         }
-        Log.d("ChekData", "data => ${data.toString()}")
     }
 
     private fun saveState(){

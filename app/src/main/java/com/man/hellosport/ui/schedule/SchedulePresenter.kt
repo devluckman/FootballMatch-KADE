@@ -18,8 +18,10 @@ open class SchedulePresenter(private val apiRepository: ApiRepository) {
                 apiRepository.doRequest(TheSportdbApi.getNextMatch(id)),
                 EventsRespone::class.java)
             uiThread {
-                view!!.hideLoading()
-                view!!.showEventList(data.events)
+                view?.let {
+                    it.hideLoading()
+                    it.showEventList(data.events)
+                }
             }
         }
     }
