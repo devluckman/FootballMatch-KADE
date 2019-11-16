@@ -30,13 +30,11 @@ class HomeFragment : Fragment() {
 
 
     private  fun init() {
-        val bundle = Bundle()
-        bundle.putBoolean("fav", false)
         viewpager.adapter = object : FragmentStateAdapter(this) {
             override fun createFragment(position: Int): Fragment {
                 return when (position) {
-                    0 -> LastMatchEvent.newInstance(bundle)
-                    else -> NextMatchEvent.newInstance(bundle)
+                    0 -> LastMatchEvent()
+                    else -> NextMatchEvent()
                 }
             }
             override fun getItemCount(): Int = 2

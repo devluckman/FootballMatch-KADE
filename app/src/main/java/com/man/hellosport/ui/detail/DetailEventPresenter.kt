@@ -9,8 +9,6 @@ import org.jetbrains.anko.uiThread
 
 class DetailEventPresenter(val view : DetailEventContract) {
     fun getTeamDetail(idHomeTeam: String?, idAwayTeam: String?) {
-        view.showLoading()
-
         doAsync {
             val dataHomeTeam = Gson().fromJson(
                 ApiRepository()
@@ -22,9 +20,7 @@ class DetailEventPresenter(val view : DetailEventContract) {
                     .doRequest(TheSportdbApi.getTeamDetail(idAwayTeam.toString())),
                 TeamRespone::class.java)
 
-
             uiThread {
-                view.hideLoading()
                 view.showTeamdetails(dataHomeTeam.teams!!, dataAwayHome.teams!!)
             }
         }

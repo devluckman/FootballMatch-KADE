@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_favorite"
         android:name="com.man.hellosport.ui.menu.favorite.FavoriteFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_match_favorite" />
+        android:label="@string/favorite"
+        tools:layout="@layout/schedulematch_layout" />
 
 </navigation>

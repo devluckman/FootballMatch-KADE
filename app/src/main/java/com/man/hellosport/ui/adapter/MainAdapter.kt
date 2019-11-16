@@ -36,7 +36,6 @@ class MainAdapter (val matchs : List<Events>,
             itemView.tvListHomeScore.text = match.intHomeScore
             itemView.tvListAwayName.text = match.strAwayTeam
             itemView.tvListAwayScore.text = match.intAwayScore
-            itemView.cvMatch.setBackgroundResource(R.drawable.grad)
             itemView.cvMatch.setOnClickListener {
                 clicklistener(match)
             }
