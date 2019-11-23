@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_league" />
 
     <fragment
-        android:id="@+id/navigation_teams"
-        android:name="com.man.hellosport.ui.dashboard.teams.TeamsFragment"
-        android:label="@string/teams"
-        tools:layout="@layout/fragment_teams" />
+        android:id="@+id/navigation_search"
+        android:name="com.man.hellosport.ui.dashboard.search.SearchFragment"
+        android:label="@string/search_match"
+        tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_events"

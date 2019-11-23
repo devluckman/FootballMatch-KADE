@@ -17,6 +17,10 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
+    <style name="MaterialDesign.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@android:color/black</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
 
 
 </resources>

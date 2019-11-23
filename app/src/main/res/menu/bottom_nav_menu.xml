@@ -7,9 +7,9 @@
         android:title="@string/league" />
 
     <item
-        android:id="@+id/navigation_teams"
-        android:icon="@drawable/nav_teams"
-        android:title="@string/teams" />
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/nav_search"
+        android:title="@string/search" />
 
     <item
         android:id="@+id/navigation_events"

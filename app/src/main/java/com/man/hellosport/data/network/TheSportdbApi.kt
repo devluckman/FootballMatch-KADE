@@ -13,8 +13,19 @@ object TheSportdbApi {
         return BuildConfig.BASE_URL +
                 "eventsnextleague.php?id=${id}"
     }
+
     fun getTeamDetail(id: String): String {
         return BuildConfig.BASE_URL +
                 "lookupteam.php?id=$id"
+    }
+
+    fun getLeagueDetail(id: String): String {
+        return BuildConfig.BASE_URL +
+                "lookupleague.php?id=$id"
+    }
+
+    fun getSearch(query: String): String {
+        return BuildConfig.BASE_URL +
+                "searchevents.php?e=$query"
     }
 }

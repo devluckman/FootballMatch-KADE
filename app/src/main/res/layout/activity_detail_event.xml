@@ -11,6 +11,7 @@
     <RelativeLayout
         android:id="@+id/view_appbar"
         android:padding="8dp"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
 
@@ -24,6 +25,7 @@
         <TextView
             android:fontFamily="@font/font_circular_std_book"
             android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:text="@string/detail_event"
             android:layout_centerVertical="true"
