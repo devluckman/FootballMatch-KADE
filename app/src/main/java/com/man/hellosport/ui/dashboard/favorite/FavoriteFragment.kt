@@ -78,6 +78,9 @@ class FavoriteFragment : Fragment() {
     private fun setupView(){
         rvMatchEvent.layoutManager = LinearLayoutManager(context)
         adapter =  EventsAdapter(events){
+            if (it.intAwayScore.isNullOrEmpty()){
+
+            }
             startActivity<EventsActivity>("key_detail" to it)
         }
         getFromLocal()

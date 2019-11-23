@@ -46,7 +46,12 @@ class EventsActivity : AppCompatActivity(),
 
     private fun saveState(){
         if (favorite){
-            addToFavorite()
+            if (data.intAwayScore != null && data.intHomeScore != null){
+                addToFavorite()
+            }else{
+                setData()
+                addToFavorite()
+            }
         }else{
             removeDatabase()
         }
@@ -66,6 +71,23 @@ class EventsActivity : AppCompatActivity(),
         }catch (e : SQLiteConstraintException){
 
         }
+    }
+
+    private fun setData(){
+        data.intAwayScore = "-"
+        data.strAwayGoalDetails = "-"
+        data.strAwayLineupDefense = "-"
+        data.strAwayLineupForward = "-"
+        data.strAwayLineupGoalkeeper = "-"
+        data.strAwayLineupMidfield = "-"
+        data.intHomeScore = "-"
+        data.strHomeGoalDetails = "-"
+        data.strHomeLineupDefense = "-"
+        data.strHomeLineupForward = "-"
+        data.strHomeLineupGoalkeeper = "-"
+        data.strHomeLineupMidfield = "-"
+
+
     }
 
     private fun setImgFavorite(){
