@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.man.hellosport.R
-import com.man.hellosport.model.Events
+import com.man.hellosport.model.event.Events
 import com.man.hellosport.utils.FormatDate
 import kotlinx.android.synthetic.main.item_matchlist.view.*
 

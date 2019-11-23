@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:targetApi="jelly_bean"
-    tools:context=".ui.detail.DetailEventActivity">
+    tools:context=".ui.detail.events.EventsActivity">
 
     <RelativeLayout
         android:id="@+id/view_appbar"

@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.ui.adapter.MainAdapter
-import com.man.hellosport.ui.schedule.ScheduleInterface
-import com.man.hellosport.ui.schedule.SchedulePresenter
+import com.man.hellosport.ui.dashboard.events.mvp.ScheduleInterface
+import com.man.hellosport.ui.dashboard.events.mvp.SchedulePresenter
 
 abstract class BaseFragment< P : SchedulePresenter, V : ScheduleInterface> : Fragment() {
     protected lateinit var presenter: SchedulePresenter

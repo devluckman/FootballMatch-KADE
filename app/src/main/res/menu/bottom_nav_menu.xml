@@ -2,13 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_nav_list"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_league"
+        android:icon="@drawable/nav_league"
+        android:title="@string/league" />
+
+    <item
+        android:id="@+id/navigation_teams"
+        android:icon="@drawable/nav_teams"
+        android:title="@string/teams" />
+
+    <item
+        android:id="@+id/navigation_events"
+        android:icon="@drawable/nav_events"
+        android:title="@string/events" />
 
     <item
         android:id="@+id/navigation_favorite"
-        android:icon="@drawable/ic_nav_favorite"
+        android:icon="@drawable/nav_favorites"
         android:title="@string/favorite" />
+
+
+
 
 </menu>

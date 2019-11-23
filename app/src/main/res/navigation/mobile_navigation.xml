@@ -3,18 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_events">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.man.hellosport.ui.menu.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_match_list" />
+        android:id="@+id/navigation_league"
+        android:name="com.man.hellosport.ui.dashboard.league.LeagueFragment"
+        android:label="@string/league"
+        tools:layout="@layout/fragment_league" />
+
+    <fragment
+        android:id="@+id/navigation_teams"
+        android:name="com.man.hellosport.ui.dashboard.teams.TeamsFragment"
+        android:label="@string/teams"
+        tools:layout="@layout/fragment_teams" />
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.man.hellosport.ui.dashboard.events.EventsFragment"
+        android:label="@string/events"
+        tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.man.hellosport.ui.menu.favorite.FavoriteFragment"
+        android:name="com.man.hellosport.ui.dashboard.favorite.FavoriteFragment"
         android:label="@string/favorite"
-        tools:layout="@layout/schedulematch_layout" />
+        tools:layout="@layout/events_view" />
 
 </navigation>

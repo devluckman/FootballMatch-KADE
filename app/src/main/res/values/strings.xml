@@ -23,4 +23,7 @@
     <string name="favorite">Favorite</string>
     <string name="detail_event">Detail Event</string>
     <string name="no_data">No Data</string>
+    <string name="league">League</string>
+    <string name="events">Events</string>
+    <string name="teams">Teams</string>
 </resources>
