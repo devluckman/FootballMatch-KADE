@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class LeagueResponse(
 	@SerializedName("leagues")
-	val leagues: List<LeaguesItem?>? = null
+	val leagues: List<LeaguesItem>? = null
 )

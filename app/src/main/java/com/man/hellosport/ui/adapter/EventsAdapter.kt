@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.man.hellosport.R
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.utils.FormatDate
-import kotlinx.android.synthetic.main.item_matchlist.view.*
+import kotlinx.android.synthetic.main.item_events.view.*
 
-class MainAdapter (val matchs : List<Events>,
-                   private val clicklistener: (Events) -> Unit)
-    : RecyclerView.Adapter<MainAdapter.MyViewHolder>()  {
+class EventsAdapter (val matchs : List<Events>,
+                     private val clicklistener: (Events) -> Unit)
+    : RecyclerView.Adapter<EventsAdapter.MyViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_matchlist, parent, false))
+                .inflate(R.layout.item_events, parent, false))
     }
 
     override fun getItemCount(): Int = matchs.size

@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.man.hellosport.R
 import com.man.hellosport.model.event.Events
-import com.man.hellosport.ui.adapter.MainAdapter
+import com.man.hellosport.ui.adapter.EventsAdapter
 import com.man.hellosport.ui.base.BaseFragment
 import com.man.hellosport.ui.detail.events.EventsActivity
 import com.man.hellosport.ui.dashboard.events.mvp.ScheduleInterface
@@ -45,7 +45,7 @@ class LastMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
 
     private fun setupView(){
         rvMatchEvent.layoutManager = LinearLayoutManager(context)
-        adapter = MainAdapter(eventLast){
+        adapter = EventsAdapter(eventLast){
             startActivity<EventsActivity>("key_detail" to it)
         }
         presenter.getLastMatch(4335.toString())

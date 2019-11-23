@@ -1,0 +1,29 @@
+{
+  "leagues": [
+    {
+      "idLeague": "4328",
+      "strLeague": "English Premier League",
+      "strLogo": "https://www.thesportsdb.com/images/media/league/logo/4c377s1535214890.png"
+    },
+    {
+      "idLeague": "4331",
+      "strLeague": "German Bundesliga",
+      "strLogo": "https://www.thesportsdb.com/images/media/league/logo/620ayu1534764709.png"
+    },
+    {
+      "idLeague": "4332",
+      "strLeague": "Italian Serie A",
+      "strLogo": "https://www.thesportsdb.com/images/media/league/logo/r7q96i1557058508.png"
+    },
+    {
+      "idLeague": "4334",
+      "strLeague": "French Ligue 1",
+      "strLogo": "https://www.thesportsdb.com/images/media/league/logo/wvryqu1422054726.png"
+    },
+    {
+      "idLeague": "4335",
+      "strLeague": "Spanish La Liga",
+      "strLogo": "https://www.thesportsdb.com/images/media/league/logo/b84z7h1565091817.png"
+    }
+  ]
+}

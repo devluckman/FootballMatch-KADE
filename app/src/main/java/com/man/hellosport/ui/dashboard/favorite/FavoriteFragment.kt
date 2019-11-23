@@ -10,7 +10,7 @@ import com.man.hellosport.R
 import com.man.hellosport.data.local.Favorite
 import com.man.hellosport.data.local.database
 import com.man.hellosport.model.event.Events
-import com.man.hellosport.ui.adapter.MainAdapter
+import com.man.hellosport.ui.adapter.EventsAdapter
 import com.man.hellosport.ui.detail.events.EventsActivity
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
@@ -22,7 +22,7 @@ import org.jetbrains.anko.support.v4.startActivity
 
 class FavoriteFragment : Fragment() {
 
-    private lateinit var adapter: MainAdapter
+    private lateinit var adapter: EventsAdapter
     private var events : MutableList<Events> = mutableListOf()
 
     override fun onCreateView(
@@ -77,7 +77,7 @@ class FavoriteFragment : Fragment() {
 
     private fun setupView(){
         rvMatchEvent.layoutManager = LinearLayoutManager(context)
-        adapter =  MainAdapter(events){
+        adapter =  EventsAdapter(events){
             startActivity<EventsActivity>("key_detail" to it)
         }
         getFromLocal()
