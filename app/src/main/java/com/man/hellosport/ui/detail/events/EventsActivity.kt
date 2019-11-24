@@ -46,12 +46,8 @@ class EventsActivity : AppCompatActivity(),
 
     private fun saveState(){
         if (favorite){
-            if (data.intAwayScore != null && data.intHomeScore != null){
-                addToFavorite()
-            }else{
-                setData()
-                addToFavorite()
-            }
+            setData()
+            addToFavorite()
         }else{
             removeDatabase()
         }
@@ -63,7 +59,6 @@ class EventsActivity : AppCompatActivity(),
                 val result = select(Favorite.TABLE_FAVORITE)
                     .whereArgs("(${Favorite.ID_EVENT} = {id})", "id" to data.idEvent!!)
                 val eventFavorite = result.parseList(classParser<Events>())
-
                 favorite = eventFavorite.isNotEmpty()
                 setImgFavorite()
 
@@ -74,20 +69,25 @@ class EventsActivity : AppCompatActivity(),
     }
 
     private fun setData(){
-        data.intAwayScore = "-"
-        data.strAwayGoalDetails = "-"
-        data.strAwayLineupDefense = "-"
-        data.strAwayLineupForward = "-"
-        data.strAwayLineupGoalkeeper = "-"
-        data.strAwayLineupMidfield = "-"
-        data.intHomeScore = "-"
-        data.strHomeGoalDetails = "-"
-        data.strHomeLineupDefense = "-"
-        data.strHomeLineupForward = "-"
-        data.strHomeLineupGoalkeeper = "-"
-        data.strHomeLineupMidfield = "-"
+        data.intAwayScore = setValue(data.intAwayScore)
+        data.strAwayGoalDetails = setValue(data.strAwayGoalDetails)
+        data.strAwayLineupDefense = setValue(data.strAwayLineupDefense)
+        data.strAwayLineupForward = setValue(data.strAwayLineupForward)
+        data.strAwayLineupGoalkeeper = setValue(data.strAwayLineupGoalkeeper)
+        data.strAwayLineupMidfield = setValue(data.strAwayLineupMidfield)
+        data.intHomeScore = setValue(data.intHomeScore)
+        data.strHomeGoalDetails = setValue(data.strHomeGoalDetails)
+        data.strHomeLineupDefense = setValue(data.strHomeLineupDefense)
+        data.strHomeLineupForward = setValue(data.strHomeLineupForward)
+        data.strHomeLineupGoalkeeper = setValue(data.strHomeLineupGoalkeeper)
+        data.strHomeLineupMidfield = setValue(data.strHomeLineupMidfield)
+    }
 
-
+    private fun setValue(data : String?) : String{
+        return when{
+            data == null || data.isEmpty() -> "-"
+            else -> data
+        }
     }
 
     private fun setImgFavorite(){
