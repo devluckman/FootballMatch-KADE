@@ -21,7 +21,7 @@ class EventsPresenter(val view : EventsContract) {
                 TeamRespone::class.java)
 
             uiThread {
-                view.showTeamdetails(dataHomeTeam.teams!!, dataAwayHome.teams!!)
+                view.showTeamdetails(dataHomeTeam.teams, dataAwayHome.teams)
             }
         }
 

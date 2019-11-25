@@ -1,8 +1,8 @@
 package com.man.hellosport.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import com.man.hellosport.R
 import org.jetbrains.anko.intentFor
 

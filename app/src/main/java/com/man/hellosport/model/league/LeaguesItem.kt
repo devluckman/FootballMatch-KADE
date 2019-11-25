@@ -15,7 +15,7 @@ data class LeaguesItem(
 	val idCup: String? = null,
 	val strComplete: String? = null,
 	val strLocked: String? = null,
-	val idLeague: String? = null,
+	val idLeague: String,
 	val idSoccerXML: String? = null,
 	val strTrophy: String? = null,
 	val strBadge: String? = null,

@@ -8,6 +8,7 @@ import com.man.hellosport.data.local.Favorite
 import com.man.hellosport.data.local.database
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.model.teams.Teams
+import com.man.hellosport.utils.FormatDate.AppLog
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_event.*
 import org.jetbrains.anko.db.classParser
@@ -146,6 +147,7 @@ class EventsActivity : AppCompatActivity(),
     }
 
     private fun loadData(events: Events) {
+        AppLog("Check data $events")
         dateScheduleTv.text = events.dateEvent
         tvScoreHome.text = events.intHomeScore
         tvScoreAway.text = events.intAwayScore

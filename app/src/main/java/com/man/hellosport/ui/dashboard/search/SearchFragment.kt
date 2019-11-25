@@ -1,7 +1,6 @@
 package com.man.hellosport.ui.dashboard.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -74,7 +73,6 @@ class SearchFragment : Fragment() , SearchContract{
     }
 
     override fun showResult(list: List<Events>) {
-        Log.d("SGG", "Check data ${list.size}")
         events.addAll(list)
         adapter.notifyDataSetChanged()
     }

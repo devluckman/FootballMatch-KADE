@@ -13,9 +13,9 @@ import com.man.hellosport.model.event.Events
 import com.man.hellosport.model.eventbus.EventLeague
 import com.man.hellosport.ui.adapter.EventsAdapter
 import com.man.hellosport.ui.base.BaseFragment
-import com.man.hellosport.ui.detail.events.EventsActivity
 import com.man.hellosport.ui.dashboard.events.mvp.ScheduleInterface
 import com.man.hellosport.ui.dashboard.events.mvp.SchedulePresenter
+import com.man.hellosport.ui.detail.events.EventsActivity
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
 import kotlinx.android.synthetic.main.events_view.*
@@ -76,14 +76,14 @@ class LastMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
     }
 
     override fun hideLoading() {
-        progressbarView?.invisible()
-        rvMatchEvent?.visible()
+        progressbarView.invisible()
+        rvMatchEvent.visible()
     }
 
     override fun showEventList(data: List<Events>) {
         eventLast.addAll(data)
         adapter.notifyDataSetChanged()
-        rvMatchEvent?.scrollToPosition(0)
+        rvMatchEvent.scrollToPosition(0)
     }
 
     override fun onAttach(context: Context) {

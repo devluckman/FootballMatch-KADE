@@ -4,7 +4,6 @@ package com.man.hellosport.data.local
 class Favorite {
     companion object{
         const val TABLE_FAVORITE = "TABLE_FAVORITE"
-        const val ID = "ID_"
         const val ID_EVENT = "ID_EVENT"
         const val DATE_EVENT = "DATE_EVENT"
         const val HOME_TEAM_ID =  "HOME_TEAM_ID"

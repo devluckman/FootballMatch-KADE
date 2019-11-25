@@ -41,12 +41,11 @@ class FavoriteFragment : Fragment() {
     private fun getFromLocal() {
         activity?.database?.use {
             val result = select(Favorite.TABLE_FAVORITE)
-            val favorite = result.parseList(parser = rowParser { id : Long, eventid : String, dateEvent : String,
+            val favorite = result.parseList(parser = rowParser { eventid : String, dateEvent : String,
                 idHome : String, strHomeName : String, homeScore : String, homeGoals : String, homeGk : String, homeDef : String, homeMid : String, homeFor : String,
                 idAway : String, strAwayName : String, awayScore : String, awayGoals : String, awayGk : String, awayDef : String, awayMid : String, awayFor : String
                 ->
                 Events(
-                    id = id,
                     idEvent = eventid,
                     dateEvent = dateEvent,
                     idHomeTeam = idHome,
@@ -78,9 +77,6 @@ class FavoriteFragment : Fragment() {
     private fun setupView(){
         rvMatchEvent.layoutManager = LinearLayoutManager(context)
         adapter =  EventsAdapter(events){
-            if (it.intAwayScore.isNullOrEmpty()){
-
-            }
             startActivity<EventsActivity>("key_detail" to it)
         }
         getFromLocal()

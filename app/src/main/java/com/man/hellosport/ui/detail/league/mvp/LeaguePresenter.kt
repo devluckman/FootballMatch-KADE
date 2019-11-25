@@ -8,15 +8,15 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class LeaguePresenter(val view : LeagueContract) {
-    fun getLeagueDetail(idLeague: String?) {
+    fun getLeagueDetail(idLeague: String) {
         doAsync {
             val data = Gson().fromJson(
                 ApiRepository()
-                    .doRequest(TheSportdbApi.getLeagueDetail(idLeague!!)),
+                    .doRequest(TheSportdbApi.getLeagueDetail(idLeague)),
                 LeagueResponse::class.java)
 
             uiThread {
-                view.showLeaguedetails(data.leagues!![0])
+                view.showLeaguedetails(data.leagues[0])
             }
         }
     }

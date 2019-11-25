@@ -3,7 +3,6 @@ package com.man.hellosport.ui.dashboard.events
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.SearchEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView

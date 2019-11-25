@@ -10,8 +10,7 @@ class DatabaseHelper(ctx : Context) :
 
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.createTable(Favorite.TABLE_FAVORITE, true,
-            Favorite.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
-            Favorite.ID_EVENT to TEXT,
+            Favorite.ID_EVENT to TEXT + PRIMARY_KEY,
             Favorite.DATE_EVENT to TEXT,
 
             Favorite.HOME_TEAM_ID to TEXT,
@@ -39,14 +38,9 @@ class DatabaseHelper(ctx : Context) :
     }
 
     companion object {
-        private var instance: DatabaseHelper? = null
-
         @Synchronized
         fun getInstance(ctx: Context): DatabaseHelper {
-            if (instance == null) {
-                instance = DatabaseHelper(ctx.applicationContext)
-            }
-            return instance!!
+            return DatabaseHelper(ctx.applicationContext)
         }
     }
 }

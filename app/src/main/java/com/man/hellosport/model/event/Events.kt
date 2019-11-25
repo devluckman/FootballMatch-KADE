@@ -6,7 +6,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Events(
-        var id : Long?,
         @SerializedName("dateEvent") var dateEvent: String? = null,
         @SerializedName("strAwayTeam") var strAwayTeam: String?= null,
         @SerializedName("strHomeTeam") var strHomeTeam: String?= null,
@@ -25,4 +24,8 @@ data class Events(
         @SerializedName("strHomeLineupForward") var strHomeLineupForward: String?= null,
         @SerializedName("strHomeLineupGoalkeeper") var strHomeLineupGoalkeeper: String?= null,
         @SerializedName("strHomeLineupMidfield") var strHomeLineupMidfield: String?= null
-) : Parcelable
+) : Parcelable {
+        override fun toString(): String {
+                return "Events(dateEvent=$dateEvent, strAwayTeam=$strAwayTeam, strHomeTeam=$strHomeTeam, idAwayTeam=$idAwayTeam, idEvent=$idEvent, idHomeTeam=$idHomeTeam, intAwayScore=$intAwayScore, intHomeScore=$intHomeScore, strAwayGoalDetails=$strAwayGoalDetails, strAwayLineupDefense=$strAwayLineupDefense, strAwayLineupForward=$strAwayLineupForward, strAwayLineupGoalkeeper=$strAwayLineupGoalkeeper, strAwayLineupMidfield=$strAwayLineupMidfield, strHomeGoalDetails=$strHomeGoalDetails, strHomeLineupDefense=$strHomeLineupDefense, strHomeLineupForward=$strHomeLineupForward, strHomeLineupGoalkeeper=$strHomeLineupGoalkeeper, strHomeLineupMidfield=$strHomeLineupMidfield)"
+        }
+}
