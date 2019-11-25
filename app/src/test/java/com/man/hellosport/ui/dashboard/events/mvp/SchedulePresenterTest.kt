@@ -3,14 +3,12 @@ package com.man.hellosport.ui.dashboard.events.mvp
 import com.google.gson.Gson
 import com.man.hellosport.TestContextProvider
 import com.man.hellosport.data.network.ApiRepository
-import com.man.hellosport.data.network.TheSportdbApi
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.model.event.EventsRespone
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
-import org.junit.Test
-
 import org.junit.Before
+import org.junit.Test
 import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito

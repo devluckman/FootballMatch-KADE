@@ -7,9 +7,8 @@ import com.man.hellosport.model.league.LeagueResponse
 import com.man.hellosport.model.league.LeaguesItem
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
-import org.junit.Test
-
 import org.junit.Before
+import org.junit.Test
 import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito

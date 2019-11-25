@@ -1,10 +1,8 @@
 package com.man.hellosport.utils
 
 import com.man.hellosport.utils.FormatDate.formatDateMatch
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
-import java.text.SimpleDateFormat
 
 class FormatDateTest {
 
