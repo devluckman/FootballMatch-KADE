@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.man.hellosport.R
+import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.ui.adapter.EventsAdapter
 import com.man.hellosport.ui.dashboard.search.mvp.SearchContract
@@ -21,7 +23,7 @@ import org.jetbrains.anko.support.v4.startActivity
 
 class SearchFragment : Fragment() , SearchContract{
 
-    private val presenter = SearchPresenter(this)
+    private val presenter = SearchPresenter(this, ApiRepository(), Gson())
     private var events : MutableList<Events> = mutableListOf()
     private lateinit var adapter: EventsAdapter
 

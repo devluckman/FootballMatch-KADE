@@ -4,26 +4,25 @@ import com.google.gson.Gson
 import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.data.network.TheSportdbApi
 import com.man.hellosport.model.teams.TeamRespone
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import com.man.hellosport.utils.CoroutineContextProvider
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-class EventsPresenter(val view : EventsContract) {
+class EventsPresenter(val view : EventsContract,
+                      private val apiRepository: ApiRepository,
+                      private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()
+) {
     fun getTeamDetail(idHomeTeam: String?, idAwayTeam: String?) {
-        doAsync {
-            val dataHomeTeam = Gson().fromJson(
-                ApiRepository()
-                    .doRequest(TheSportdbApi.getTeamDetail(idHomeTeam.toString())),
+        GlobalScope.launch(context.main){
+            val dataHomeTeam = gson.fromJson(
+                apiRepository.doRequestAsync(TheSportdbApi.getTeamDetail(idHomeTeam.toString())).await(),
                 TeamRespone::class.java)
 
-            val dataAwayHome = Gson().fromJson(
-                ApiRepository()
-                    .doRequest(TheSportdbApi.getTeamDetail(idAwayTeam.toString())),
+            val dataAwayHome = gson.fromJson(
+                apiRepository.doRequestAsync(TheSportdbApi.getTeamDetail(idAwayTeam.toString())).await(),
                 TeamRespone::class.java)
 
-            uiThread {
-                view.showTeamdetails(dataHomeTeam.teams, dataAwayHome.teams)
-            }
+            view.showTeamdetails(dataHomeTeam.teams, dataAwayHome.teams)
         }
-
     }
 }

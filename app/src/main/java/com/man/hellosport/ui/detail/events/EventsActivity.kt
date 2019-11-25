@@ -3,9 +3,11 @@ package com.man.hellosport.ui.detail.events
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.man.hellosport.R
 import com.man.hellosport.data.local.Favorite
 import com.man.hellosport.data.local.database
+import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.utils.FormatDate.AppLog
@@ -20,7 +22,7 @@ import org.jetbrains.anko.toast
 class EventsActivity : AppCompatActivity(),
     EventsContract {
 
-    private val presenter = EventsPresenter(this)
+    private val presenter = EventsPresenter(this, ApiRepository(), Gson())
     private var favorite = false
     private lateinit var data: Events
     override fun onCreate(savedInstanceState: Bundle?) {

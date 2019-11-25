@@ -33,7 +33,7 @@ class LastMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
     private var eventLast : MutableList<Events> = mutableListOf()
     private var idLeague = ""
     override fun createPresenter(): SchedulePresenter =
-        SchedulePresenter(apiRepository)
+        SchedulePresenter(apiRepository, this, gson)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,11 +62,6 @@ class LastMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
         }
         presenter.getLastMatch(idLeague)
         rvMatchEvent.adapter = adapter
-    }
-
-    override fun onResume() {
-        super.onResume()
-        presenter.subscribe(this)
     }
 
 

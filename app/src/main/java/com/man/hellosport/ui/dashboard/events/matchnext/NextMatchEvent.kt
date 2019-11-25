@@ -42,7 +42,8 @@ class NextMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
 
 
     override fun createPresenter(): SchedulePresenter =
-        SchedulePresenter(apiRepository)
+        SchedulePresenter(apiRepository, this, gson)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,12 +68,6 @@ class NextMatchEvent : BaseFragment<SchedulePresenter, ScheduleInterface>(),
 
         rvMatchEvent.adapter = adapter
     }
-
-    override fun onResume() {
-        super.onResume()
-        presenter.subscribe(this)
-    }
-
 
     override fun showLoading() {
         progressbarView.visible()

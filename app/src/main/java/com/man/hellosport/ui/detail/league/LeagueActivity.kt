@@ -6,7 +6,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.man.hellosport.R
+import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.model.league.LeaguesItem
 import com.man.hellosport.ui.detail.league.mvp.LeagueContract
 import com.man.hellosport.ui.detail.league.mvp.LeaguePresenter
@@ -20,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_league.*
 class LeagueActivity : AppCompatActivity() , LeagueContract , View.OnClickListener{
 
     private lateinit var data: LeaguesItem
-    private val presenter = LeaguePresenter(this)
+    private val presenter = LeaguePresenter(this, ApiRepository(), Gson())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,13 +78,13 @@ class LeagueActivity : AppCompatActivity() , LeagueContract , View.OnClickListen
         return true
     }
 
-    override fun showLeaguedetails(leaguesItem: LeaguesItem) {
-        data = leaguesItem
+    override fun showLeaguedetails(leagues: List<LeaguesItem>) {
+        data = leagues[0]
         txtCountry.text = data.strCountry
         txtDate.text = data.dateFirstEvent
         txtDesc.text = data.strDescriptionEN
 
-        setupView(leaguesItem)
+        setupView(leagues[0])
     }
 
 }

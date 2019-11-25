@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 object FormatDate {
     const val TAG = "DICODING"
     @SuppressLint("SimpleDateFormat")
-    private fun formatDateMatch(date: String, format: String) : String
+   fun formatDateMatch(date: String, format: String) : String
     {
         var result = ""
         val old = SimpleDateFormat("yyyy-MM-dd")
@@ -24,6 +24,8 @@ object FormatDate {
 
         return result
     }
+
+
 
     fun getLongDate(date: String?): String {
         return formatDateMatch(date.toString(), "EEE, dd MMM yyyy")
