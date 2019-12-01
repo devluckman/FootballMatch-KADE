@@ -39,7 +39,7 @@ class LeaguePresenterTest {
         presenter = LeaguePresenter(view, apiRepository, gson, TestContextProvider())
     }
 
-
+    // Unit Test Detail League
     @Test
     fun getLeagueDetail() {
         val league : MutableList<LeaguesItem> = mutableListOf()
