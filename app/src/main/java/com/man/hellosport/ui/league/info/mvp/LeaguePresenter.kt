@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.detail.league.mvp
+package com.man.hellosport.ui.league.info.mvp
 
 import com.google.gson.Gson
 import com.man.hellosport.data.network.ApiRepository

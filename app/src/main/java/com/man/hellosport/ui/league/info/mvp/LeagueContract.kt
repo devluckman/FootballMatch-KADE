@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.detail.league.mvp
+package com.man.hellosport.ui.league.info.mvp
 
 import com.man.hellosport.model.league.LeaguesItem
 

@@ -55,8 +55,8 @@ class SearchFragment : Fragment() , SearchContract{
     }
 
     private fun setupView(){
-        textInputSearch.isFocusableInTouchMode = true
-        textInputSearch.requestFocus()
+//        textInputSearch.isFocusableInTouchMode = true
+//        textInputSearch.requestFocus()
         rvSearch.layoutManager = LinearLayoutManager(context)
         adapter = EventsAdapter(events){
             startActivity<EventsActivity>("key_detail" to it)

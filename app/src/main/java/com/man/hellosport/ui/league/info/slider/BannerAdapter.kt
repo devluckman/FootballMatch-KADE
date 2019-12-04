@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.detail.league.slider
+package com.man.hellosport.ui.league.info.slider
 
 import android.view.LayoutInflater
 import android.view.View

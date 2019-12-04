@@ -1,151 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@color/colorAccent"
+        app:tabSelectedTextColor="@android:color/black"
+        app:tabGravity="fill"
+        app:tabMode="fixed"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
-        tools:context=".ui.detail.league.LeagueActivity">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            app:cardCornerRadius="8dp"
-            app:cardPreventCornerOverlap="false">
-
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/sliderView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:sliderAnimationDuration="600"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderAutoCycleEnabled="true"
-                app:sliderCircularHandlerEnabled="true"
-                app:sliderIndicatorAnimationDuration="600"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="#5A5A5A"
-                app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="3"
-                app:sliderStartAutoCycle="true" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <LinearLayout
-            android:id="@+id/line2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/cardView"
-            android:layout_marginTop="16dp">
-
-            <ImageView
-                android:id="@+id/icnWeb"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/league_ic_internet" />
-
-            <ImageView
-                android:id="@+id/icnYoutube"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/league_ic_youtube" />
-
-            <ImageView
-                android:id="@+id/icnFacebook"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/league_ic_facebook" />
-
-            <ImageView
-                android:id="@+id/icnTwitter"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/league_ic_twitter" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line2"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/country"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/font_circular_std_book" />
-
-            <TextView
-                android:id="@+id/txtCountry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/description_league"
-                android:textSize="16sp"
-                app:fontFamily="@font/font_circular_std_book" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/first_event"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/font_circular_std_book" />
-
-
-            <TextView
-                android:id="@+id/txtDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/description_league"
-                android:textSize="16sp"
-                app:fontFamily="@font/font_circular_std_book" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/description_league"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/font_circular_std_book" />
-
-            <TextView
-                android:id="@+id/txtDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/description_league"
-                android:textSize="16sp"
-                app:fontFamily="@font/font_circular_std_book" />
-
-
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>
 

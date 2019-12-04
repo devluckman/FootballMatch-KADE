@@ -24,8 +24,8 @@ class MainActivityTest {
     @Test
     fun testRecyclerViewBehaviour() {
         Thread.sleep(4000)
-        onView(withId(rvMatchEvent))
-            .check(matches(isDisplayed()))
+
+        onView(withId(rvMatchEvent)).check(matches(isDisplayed()))
 
         onView(withId(rvMatchEvent)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
@@ -35,9 +35,11 @@ class MainActivityTest {
 
         onView(withId(rvMatchEvent)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                10, click()
+                10,
+                click()
             )
         )
+
     }
 
     @Test
