@@ -2,7 +2,6 @@ package com.man.hellosport.ui.dashboard.favorite.mvp
 
 import android.content.Context
 import com.man.hellosport.data.local.FavoriteMatch
-import com.man.hellosport.data.local.FavoriteTeam
 import com.man.hellosport.data.local.database
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.utils.CoroutineContextProvider

@@ -3,10 +3,9 @@ package com.man.hellosport.ui.detail.teams
 import android.content.Intent
 import android.database.sqlite.SQLiteConstraintException
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.man.hellosport.R
 import com.man.hellosport.data.local.FavoriteTeam
 import com.man.hellosport.data.local.database

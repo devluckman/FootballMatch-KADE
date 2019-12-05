@@ -2,12 +2,11 @@ package com.man.hellosport.ui.league.favorite
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.man.hellosport.R
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.ui.adapter.TeamsAdapter

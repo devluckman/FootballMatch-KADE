@@ -12,7 +12,7 @@ import com.man.hellosport.R
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.model.eventbus.EventLeague
 import com.man.hellosport.ui.adapter.EventsAdapter
-import com.man.hellosport.ui.base.BaseFragment
+import com.man.hellosport.ui.dashboard.events.base.BaseFragment
 import com.man.hellosport.ui.dashboard.events.mvp.ScheduleInterface
 import com.man.hellosport.ui.dashboard.events.mvp.SchedulePresenter
 import com.man.hellosport.ui.detail.events.EventsActivity
