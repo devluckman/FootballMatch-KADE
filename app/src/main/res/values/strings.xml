@@ -32,6 +32,10 @@
     <string name="search_match">Search Match</string>
     <string name="search">Search</string>
     <string name="football_match">Football Match\n Version 1.0</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="detail_teams">Detail Teams</string>
+    <string name="stadium">Stadium :</string>
+    <string name="description">Description :</string>
 
 
 </resources>

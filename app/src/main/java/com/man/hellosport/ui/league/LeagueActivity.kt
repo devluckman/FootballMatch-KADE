@@ -53,7 +53,7 @@ class LeagueActivity : AppCompatActivity() {
                 0 -> "Info"
                 1 -> "Teams"
                 2 -> "Standing"
-                else -> "Favorite"
+                else -> "Favorite\nTeams"
             }
         }.attach()
     }

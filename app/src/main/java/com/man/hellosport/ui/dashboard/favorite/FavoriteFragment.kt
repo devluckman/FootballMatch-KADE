@@ -7,23 +7,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.man.hellosport.R
-import com.man.hellosport.data.local.Favorite
-import com.man.hellosport.data.local.database
 import com.man.hellosport.model.event.Events
 import com.man.hellosport.ui.adapter.EventsAdapter
+import com.man.hellosport.ui.dashboard.favorite.mvp.FavoriteContract
+import com.man.hellosport.ui.dashboard.favorite.mvp.FavoritePresenter
 import com.man.hellosport.ui.detail.events.EventsActivity
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
 import kotlinx.android.synthetic.main.events_view.*
-import org.jetbrains.anko.db.rowParser
-import org.jetbrains.anko.db.select
 import org.jetbrains.anko.support.v4.startActivity
 
 
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : Fragment(), FavoriteContract {
+
 
     private lateinit var adapter: EventsAdapter
     private var events : MutableList<Events> = mutableListOf()
+    private lateinit var presenter : FavoritePresenter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,68 +35,47 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = FavoritePresenter(this, context!!)
         setupView()
     }
 
-    private fun getFromLocal() {
-        activity?.database?.use {
-            val result = select(Favorite.TABLE_FAVORITE)
-            val favorite = result.parseList(parser = rowParser { eventid : String, dateEvent : String,
-                idHome : String, strHomeName : String, homeScore : String, homeGoals : String, homeGk : String, homeDef : String, homeMid : String, homeFor : String,
-                idAway : String, strAwayName : String, awayScore : String, awayGoals : String, awayGk : String, awayDef : String, awayMid : String, awayFor : String
-                ->
-                Events(
-                    idEvent = eventid,
-                    dateEvent = dateEvent,
-                    idHomeTeam = idHome,
-                    strHomeTeam = strHomeName,
-                    intHomeScore = homeScore,
-                    strHomeGoalDetails = homeGoals,
-                    strHomeLineupGoalkeeper = homeGk,
-                    strHomeLineupDefense = homeDef,
-                    strHomeLineupMidfield = homeMid,
-                    strHomeLineupForward = homeFor,
-                    idAwayTeam = idAway,
-                    strAwayTeam = strAwayName,
-                    intAwayScore = awayScore,
-                    strAwayGoalDetails = awayGoals,
-                    strAwayLineupGoalkeeper = awayGk,
-                    strAwayLineupDefense = awayDef,
-                    strAwayLineupMidfield = awayMid,
-                    strAwayLineupForward = awayFor
-                )
-            })
-            if (favorite.isNullOrEmpty()) {
-                emptyData()
-            } else {
-                showEventFromDb(favorite)
-            }
-        }
+    override fun onResume() {
+        super.onResume()
+        presenter.getFromLocalData()
     }
+
 
     private fun setupView(){
         rvMatchEvent.layoutManager = LinearLayoutManager(context)
         adapter =  EventsAdapter(events){
             startActivity<EventsActivity>("key_detail" to it)
         }
-        getFromLocal()
+        presenter.getFromLocalData()
         rvMatchEvent.adapter = adapter
     }
 
-    private fun emptyData() {
+    override fun emptyData() {
         rvMatchEvent.invisible()
         progressbarView.invisible()
         txtNodata.visible()
     }
 
+    override fun showLoading() {
+        progressbarView.visible()
+        rvMatchEvent.invisible()
+    }
 
-    private fun showEventFromDb(data: List<Events>) {
-        rvMatchEvent.visible()
-        txtNodata.invisible()
+    override fun hideLoading() {
         progressbarView.invisible()
+        rvMatchEvent.visible()
+    }
+
+    override fun showEventList(data: List<Events>) {
+        events.clear()
         events.addAll(data)
         adapter.notifyDataSetChanged()
         rvMatchEvent.scrollToPosition(0)
     }
+
 
 }

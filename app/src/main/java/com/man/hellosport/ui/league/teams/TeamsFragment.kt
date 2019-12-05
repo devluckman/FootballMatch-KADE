@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 
 import com.man.hellosport.R
@@ -14,6 +15,7 @@ import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.model.league.LeaguesItem
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.ui.adapter.TeamsAdapter
+import com.man.hellosport.ui.detail.teams.TeamsActivity
 import com.man.hellosport.ui.league.LeagueActivity
 import com.man.hellosport.ui.league.teams.mvp.TeamsInterface
 import com.man.hellosport.ui.league.teams.mvp.TeamsPresenter
@@ -52,10 +54,15 @@ class TeamsFragment : Fragment(), TeamsInterface {
         setupView()
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.getTeamsLeague(data.idLeague)
+    }
+
     private fun setupView(){
         rvTeamsLeague.layoutManager = LinearLayoutManager(context)
         adapter = TeamsAdapter(teamsList){
-           // startActivity<EventsActivity>("key_detail" to it)
+            startActivity<TeamsActivity>("key_detail" to it)
         }
         presenter.getTeamsLeague(data.idLeague)
         rvTeamsLeague.adapter = adapter
@@ -73,6 +80,7 @@ class TeamsFragment : Fragment(), TeamsInterface {
     }
 
     override fun showTeamList(data: List<Teams>) {
+        teamsList.clear()
         teamsList.addAll(data)
         adapter.notifyDataSetChanged()
         rvTeamsLeague.scrollToPosition(0)

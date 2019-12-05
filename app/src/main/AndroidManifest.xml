@@ -13,18 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".ui.SplashActivity">
+        <activity android:name=".ui.detail.teams.TeamsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.man.hellosport.ui.league.LeagueActivity" />
-        <activity android:name=".ui.detail.events.EventsActivity" />
-        <activity android:name=".ui.MainActivity"/>
-
+        <activity android:name=".ui.league.LeagueActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.detail.events.EventsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

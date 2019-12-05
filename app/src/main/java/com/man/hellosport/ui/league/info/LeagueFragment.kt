@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,8 @@ import com.man.hellosport.ui.league.LeagueActivity
 import com.man.hellosport.ui.league.info.mvp.LeagueContract
 import com.man.hellosport.ui.league.info.mvp.LeaguePresenter
 import com.man.hellosport.ui.league.info.slider.BannerAdapter
+import com.man.hellosport.utils.invisible
+import com.man.hellosport.utils.visible
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
@@ -54,6 +57,20 @@ class LeagueFragment : Fragment(),  LeagueContract, View.OnClickListener {
         icnTwitter.setOnClickListener(this)
         icnYoutube.setOnClickListener(this)
         icnWeb.setOnClickListener(this)
+    }
+
+    override fun showLoad() {
+        cardView.invisible()
+        line2.invisible()
+        line3.invisible()
+        progressLeague.visible()
+    }
+
+    override fun hideLoad() {
+        cardView.visible()
+        line2.visible()
+        line3.visible()
+        progressLeague.invisible()
     }
 
 
