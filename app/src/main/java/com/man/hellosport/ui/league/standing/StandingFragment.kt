@@ -50,10 +50,6 @@ class StandingFragment : Fragment(), StandingView {
         setupView()
     }
 
-    override fun onResume() {
-        super.onResume()
-        presenter.getStandingLeague(data.idLeague)
-    }
 
     private fun setupView(){
         rvStanding.layoutManager = LinearLayoutManager(context)

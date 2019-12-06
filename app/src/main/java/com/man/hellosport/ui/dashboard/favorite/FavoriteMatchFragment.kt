@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.events_view.*
 import org.jetbrains.anko.support.v4.startActivity
 
 
-class FavoriteFragment : Fragment(), FavoriteContract {
+class FavoriteMatchFragment : Fragment(), FavoriteContract {
 
 
     private lateinit var adapter: EventsAdapter

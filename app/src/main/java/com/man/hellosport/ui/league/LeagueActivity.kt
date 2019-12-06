@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.man.hellosport.R
 import com.man.hellosport.model.league.LeaguesItem
-import com.man.hellosport.ui.league.favorite.TeamsFavoriteFragment
+import com.man.hellosport.ui.dashboard.favorite.FavoriteTeamsFragment
 import com.man.hellosport.ui.league.info.LeagueFragment
 import com.man.hellosport.ui.league.standing.StandingFragment
 import com.man.hellosport.ui.league.teams.TeamsFragment
@@ -42,18 +42,16 @@ class LeagueActivity : AppCompatActivity() {
                 return when (position) {
                     0 -> LeagueFragment()
                     1 -> TeamsFragment()
-                    2 -> StandingFragment()
-                    else -> TeamsFavoriteFragment()
+                    else -> StandingFragment()
                 }
             }
-            override fun getItemCount(): Int = 4
+            override fun getItemCount(): Int = 3
         }
         TabLayoutMediator(tabs, viewpager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Info"
                 1 -> "Teams"
-                2 -> "Standing"
-                else -> "Favorite\nTeams"
+                else -> "Standing"
             }
         }.attach()
     }

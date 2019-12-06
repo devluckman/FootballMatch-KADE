@@ -16,7 +16,6 @@ class FavoritePresenter(val view : FavoriteContract, val activity: Context,
 
     fun getFromLocalData(){
         view.showLoading()
-
         GlobalScope.launch(context.main){
             activity.database.use {
                 val result = select(FavoriteMatch.TABLE_FAVORITE)

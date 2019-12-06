@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.league.favorite
+package com.man.hellosport.ui.dashboard.favorite
 
 
 import android.os.Bundle
@@ -11,8 +11,8 @@ import com.man.hellosport.R
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.ui.adapter.TeamsAdapter
 import com.man.hellosport.ui.detail.teams.TeamsActivity
-import com.man.hellosport.ui.league.favorite.mvp.TeamFavoritePresenter
-import com.man.hellosport.ui.league.favorite.mvp.TeamFavoriteView
+import com.man.hellosport.ui.dashboard.favorite.mvp.TeamFavoritePresenter
+import com.man.hellosport.ui.dashboard.favorite.mvp.TeamFavoriteView
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
 import kotlinx.android.synthetic.main.fragment_teams_favorite.*
@@ -21,7 +21,8 @@ import org.jetbrains.anko.support.v4.startActivity
 /**
  * A simple [Fragment] subclass.
  */
-class TeamsFavoriteFragment : Fragment(), TeamFavoriteView {
+class FavoriteTeamsFragment : Fragment(),
+    TeamFavoriteView {
 
 
     private var teamsListFavorite : MutableList<Teams> = mutableListOf()
@@ -38,7 +39,8 @@ class TeamsFavoriteFragment : Fragment(), TeamFavoriteView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter = TeamFavoritePresenter(this, context!!)
+        presenter =
+            TeamFavoritePresenter(this, context!!)
         setupView()
     }
 

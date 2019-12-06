@@ -52,10 +52,6 @@ class TeamsFragment : Fragment(), TeamsInterface {
         setupView()
     }
 
-    override fun onResume() {
-        super.onResume()
-        presenter.getTeamsLeague(data.idLeague)
-    }
 
     private fun setupView(){
         rvTeamsLeague.layoutManager = LinearLayoutManager(context)

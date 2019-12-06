@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.league.favorite.mvp
+package com.man.hellosport.ui.dashboard.favorite.mvp
 
 import com.man.hellosport.model.teams.Teams
 
