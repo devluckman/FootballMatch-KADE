@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.man.hellosport.R
 import com.man.hellosport.model.league.LeaguesItem
-import com.man.hellosport.ui.dashboard.favorite.FavoriteTeamsFragment
 import com.man.hellosport.ui.league.info.LeagueFragment
 import com.man.hellosport.ui.league.standing.StandingFragment
 import com.man.hellosport.ui.league.teams.TeamsFragment

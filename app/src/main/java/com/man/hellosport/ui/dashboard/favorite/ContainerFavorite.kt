@@ -2,16 +2,13 @@ package com.man.hellosport.ui.dashboard.favorite
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-
 import com.man.hellosport.R
-import com.man.hellosport.ui.dashboard.events.macthlast.LastMatchEvent
-import com.man.hellosport.ui.dashboard.events.matchnext.NextMatchEvent
 import kotlinx.android.synthetic.main.fragment_container_favorite.*
 
 /**

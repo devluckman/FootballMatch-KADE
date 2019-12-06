@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.man.hellosport.R
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.ui.adapter.TeamsAdapter
-import com.man.hellosport.ui.detail.teams.TeamsActivity
 import com.man.hellosport.ui.dashboard.favorite.mvp.TeamFavoritePresenter
 import com.man.hellosport.ui.dashboard.favorite.mvp.TeamFavoriteView
+import com.man.hellosport.ui.detail.teams.TeamsActivity
 import com.man.hellosport.utils.invisible
 import com.man.hellosport.utils.visible
 import kotlinx.android.synthetic.main.fragment_teams_favorite.*
