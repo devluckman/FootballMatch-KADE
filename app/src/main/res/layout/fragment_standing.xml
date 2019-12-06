@@ -20,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="@string/no"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -42,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Played"
+            android:text="@string/played"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -53,7 +53,7 @@
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Win"
+            android:text="@string/win"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -64,7 +64,7 @@
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Draw"
+            android:text="@string/draw"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -75,7 +75,7 @@
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Lose"
+            android:text="@string/loss"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
@@ -86,11 +86,10 @@
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Point"
+            android:text="@string/point"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/font_circular_std_book" />
-
 
 
     </LinearLayout>

@@ -36,6 +36,13 @@
     <string name="detail_teams">Detail Teams</string>
     <string name="stadium">Stadium :</string>
     <string name="description">Description :</string>
+    <string name="no">No</string>
+    <string name="name">Name</string>
+    <string name="played">Played</string>
+    <string name="win">Win</string>
+    <string name="draw">Draw</string>
+    <string name="loss">Loss</string>
+    <string name="point">Point</string>
 
 
 </resources>
