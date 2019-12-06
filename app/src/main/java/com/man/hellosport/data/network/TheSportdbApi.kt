@@ -34,4 +34,9 @@ object TheSportdbApi {
                 "lookup_all_teams.php?id=$id"
     }
 
+    fun getStandingLeague(id: String): String {
+        return BuildConfig.BASE_URL +
+                "lookuptable.php?l=$id"
+    }
+
 }

@@ -5,8 +5,6 @@ import com.man.hellosport.data.local.FavoriteTeam
 import com.man.hellosport.data.local.database
 import com.man.hellosport.model.teams.Teams
 import com.man.hellosport.utils.CoroutineContextProvider
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import org.jetbrains.anko.db.rowParser
 import org.jetbrains.anko.db.select
 
@@ -15,7 +13,6 @@ class TeamFavoritePresenter (val view : TeamFavoriteView, val activity: Context,
 
     fun getFromLocalData(){
         view.showLoading()
-        GlobalScope.launch(context.main){
             activity.database.use {
                 val result = select(FavoriteTeam.TABLE_TEAMS)
                 val favorite = result.parseList(parser = rowParser {
@@ -51,8 +48,8 @@ class TeamFavoritePresenter (val view : TeamFavoriteView, val activity: Context,
                     view.hideLoading()
                     view.showTeamListFavorite(favorite)
                 }
+
             }
-        }
     }
 
 }

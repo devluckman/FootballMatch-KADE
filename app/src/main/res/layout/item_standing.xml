@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/title"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtNo"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtPlayed"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtWin"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtDraw"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtLoss"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+    <TextView
+        android:id="@+id/txtPoint"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/font_circular_std_book" />
+
+
+
+</LinearLayout>
