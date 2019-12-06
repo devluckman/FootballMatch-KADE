@@ -1,10 +1,11 @@
 package com.man.hellosport.ui.league.teams
 
 
+import android.app.SearchManager
+import android.content.Context.SEARCH_SERVICE
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
@@ -32,9 +33,12 @@ class TeamsFragment : Fragment(), TeamsInterface {
     private var teamsList : MutableList<Teams> = mutableListOf()
     private lateinit var adapter: TeamsAdapter
 
+    private var searchView: SearchView? = null
+    private var queryTextListener: SearchView.OnQueryTextListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         presenter = TeamsPresenter(ApiRepository(), this, Gson())
         data = (activity as LeagueActivity).getLeagueItem()
     }
@@ -50,6 +54,52 @@ class TeamsFragment : Fragment(), TeamsInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.getTeamsLeague(data.idLeague)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchManager = (activity as LeagueActivity).getSystemService(SEARCH_SERVICE) as SearchManager
+
+        if (searchItem != null) {
+            searchView = searchItem.actionView as SearchView
+        }
+
+        if (searchView != null) {
+            searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
+
+            queryTextListener = object : SearchView.OnQueryTextListener {
+                override fun onQueryTextChange(newText: String): Boolean {
+                    if (newText.isNotEmpty())
+                        presenter.getSearchTeams(newText)
+                    return true
+                }
+
+                override fun onQueryTextSubmit(query: String): Boolean {
+
+                    return true
+                }
+            }
+            searchView!!.setOnQueryTextListener(queryTextListener)
+        }
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search ->
+                // Not implemented here
+                return false
+            else -> {
+            }
+        }
+        searchView!!.setOnQueryTextListener(queryTextListener)
+        return super.onOptionsItemSelected(item)
     }
 
 

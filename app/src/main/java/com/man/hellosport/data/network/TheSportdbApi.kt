@@ -39,4 +39,9 @@ object TheSportdbApi {
                 "lookuptable.php?l=$id"
     }
 
+    fun getSearchTeams(query: String): String {
+        return BuildConfig.BASE_URL +
+                "searchteams.php?t=$query"
+    }
+
 }
