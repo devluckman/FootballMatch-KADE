@@ -6,23 +6,19 @@ plugins{
     kotlin("android.extensions")
 }
 
-//android {
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
-//}
-
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Dependencies.Android.compileSdkVersion)
     defaultConfig {
-        applicationId = "com.man.hellosport"
-        minSdkVersion(15)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-        buildConfigField("String", "BASE_URL", "\"https://www.thesportsdb.com/api/v1/json/1/\"")
+        applicationId = Dependencies.Android.applicationId
+        minSdkVersion(Dependencies.Android.minSdkVersion)
+        targetSdkVersion(Dependencies.Android.targetSdkVersion)
+        versionCode = Dependencies.Android.versionCode
+        versionName = Dependencies.Android.versionName
+        testInstrumentationRunner = Dependencies.Android.testInstrumentationRunner
+        vectorDrawables.useSupportLibrary = Dependencies.Android.vectorDrawablesUseSupportLibrary
+        buildConfigField(Dependencies.buildConfig.typeConfig,
+            Dependencies.buildConfig.nameConfig,
+            Dependencies.buildConfig.valueConfig)
 
 
     }
@@ -46,58 +42,49 @@ android {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
+    dynamicFeatures = ModuleDependency.getDynamicFeatureModules().toMutableSet()
+
 }
 
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.vectordrawable:vectordrawable:1.1.0")
+
+    implementation(Dependencies.kotlin.stdlib_jdk7)
+    implementation(Dependencies.kotlin.coroutines)
+
+    implementation(Dependencies.supportLibs.appCompat)
+    implementation(Dependencies.supportLibs.constraintLayout)
+    implementation(Dependencies.supportLibs.legacy)
+    implementation(Dependencies.supportLibs.vectorDrawable)
+    implementation(Dependencies.supportLibs.lifecycle)
+    implementation(Dependencies.supportLibs.recyclerview)
+    implementation(Dependencies.supportLibs.viewpager2)
+    implementation(Dependencies.supportLibs.navigationFragment)
+    implementation(Dependencies.supportLibs.navigationUi)
 
     //Denpedency Testing
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.2.0")
-    androidTestImplementation("androidx.test:rules:1.2.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
-
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-
-    //UI
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation("com.google.android.material:material:1.2.0-alpha04")
-
-    //Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.2.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.2.0")
-
-    //Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")
-
-
-    //Mockito
-    testImplementation("org.mockito:mockito-core:3.0.0")
-    testImplementation("org.mockito:mockito-inline:3.0.0")
-
+    testImplementation(Dependencies.testLibs.mockitoCore)
+    testImplementation(Dependencies.testLibs.mockitoInline)
+    testImplementation(Dependencies.testLibs.junit)
+    androidTestImplementation(Dependencies.testLibs.runner)
+    androidTestImplementation(Dependencies.testLibs.rules)
+    androidTestImplementation(Dependencies.testLibs.espresso)
 
     //anko
-    implementation("org.jetbrains.anko:anko:0.10.8")
-    implementation("org.jetbrains.anko:anko-coroutines:0.10.8")
-    implementation("org.jetbrains.anko:anko-sqlite:0.10.8")
+    implementation(Dependencies.anko.core)
+    implementation(Dependencies.anko.coroutines)
+    implementation(Dependencies.anko.sqlite)
 
-    //Picasso
-    implementation("com.squareup.picasso:picasso:2.71828")
+    //View
+    implementation(Dependencies.view.material)
+    implementation(Dependencies.view.picasso)
+    implementation(Dependencies.view.autoimageslider)
+
 
     //Gson
-    implementation("com.google.code.gson:gson:2.8.6")
-
-    // Slider image
-    implementation("com.github.smarteist:autoimageslider:1.3.2-appcompat")
-
+    implementation(Dependencies.data.gson)
     //Eventbus
-    implementation("org.greenrobot:eventbus:3.1.1")
+    implementation(Dependencies.data.eventbus)
 
 }
