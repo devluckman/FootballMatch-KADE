@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.teams.TeamsActivity"
+    tools:ignore="ContentDescription">
+
+    <RelativeLayout
+        android:paddingTop="?actionBarSize"
+        android:id="@+id/rellay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grad"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circle_border">
+
+            <ImageView
+                android:id="@+id/logoTeams"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="9dp"
+                android:padding="12dp"
+                android:src="@drawable/img_barca" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txtTeams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgUser"
+            android:layout_centerHorizontal="true"
+            app:fontFamily="@font/font_circular_std_book"
+            android:text="@string/barcelona"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/txtCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTeams"
+            android:layout_centerHorizontal="true"
+            app:fontFamily="@font/font_circular_std_book"
+            android:text="@string/barcelona"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/backPressed"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+            android:layout_width="24dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="12dp"
+            />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_toRightOf="@id/backPressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:fontFamily="@font/font_circular_std_book"
+            android:textColor="@android:color/white"
+            android:text="@string/detail_teams"
+            android:layout_toEndOf="@id/backPressed"
+            android:layout_marginStart="24dp" />
+
+        <ImageView
+            android:id="@+id/imgFavorite"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_unfavorite_24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linlay1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/rellay1"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="@color/followingBg"
+        android:orientation="horizontal"
+        tools:ignore="DisableBaselineAlignment">
+
+        <ImageView
+            android:id="@+id/icnWeb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/league_ic_internet" />
+
+        <ImageView
+            android:id="@+id/icnYoutube"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/league_ic_youtube" />
+
+
+        <ImageView
+            android:id="@+id/icnInstagram"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_instagram" />
+
+        <ImageView
+            android:id="@+id/icnFacebook"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/league_ic_facebook" />
+
+        <ImageView
+            android:id="@+id/icnTwitter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/league_ic_twitter" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/linlay1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/stadium"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/font_circular_std_book" />
+
+        <TextView
+            android:id="@+id/txtStadium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/description_league"
+            android:textSize="16sp"
+            app:fontFamily="@font/font_circular_std_book" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/description"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/font_circular_std_book" />
+
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/description_league"
+            android:textSize="16sp"
+            app:fontFamily="@font/font_circular_std_book" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

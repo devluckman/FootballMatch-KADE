@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.detail.league.mvp
+package com.man.hellosport.ui.league.info.mvp
 
 import com.google.gson.Gson
 import com.man.hellosport.data.network.ApiRepository
@@ -13,10 +13,12 @@ class LeaguePresenter(val view : LeagueContract,
                       private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()
 ) {
     fun getLeagueDetail(idLeague: String) {
+        view.showLoad()
         GlobalScope.launch(context.main){
             val data = gson.fromJson(
                 apiRepository.doRequestAsync(TheSportdbApi.getLeagueDetail(idLeague)).await(),
                 LeagueResponse::class.java)
+            view.hideLoad()
             view.showLeaguedetails(data.leagues)
 
         }

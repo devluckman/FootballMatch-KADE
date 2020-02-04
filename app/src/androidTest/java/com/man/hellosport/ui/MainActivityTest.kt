@@ -21,34 +21,82 @@ class MainActivityTest {
     @JvmField
     var activityRule = ActivityTestRule(MainActivity::class.java)
 
-    // Submission 4 =>
-    // Instruments Testing untuk fitur pencarian
     @Test
-    fun testSearchMatchBehaviour() {
-        //display
-        onView(withId(textInputSearch)).check(matches(isDisplayed()))
-
-        // input text
-        onView(withId(textInputSearch)).perform(typeText("Barcelona"))
-
-        //press enter
-        onView(withId(textInputSearch)).perform(pressKey(KeyEvent.KEYCODE_ENTER))
-
-        // waiting data from API
+    fun testRecyclerViewBehaviour() {
         Thread.sleep(4000)
 
-        // Result Data
-        onView(withId(rvSearch))
+        onView(withId(rvMatchEvent)).check(matches(isDisplayed()))
+
+        onView(withId(rvMatchEvent)).perform(
+            RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
+                10
+            )
+        )
+
+        onView(withId(rvMatchEvent)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                10,
+                click()
+            )
+        )
+
+    }
+
+    @Test
+    fun testAppBehaviour() {
+        onView(withId(spinner))
             .check(matches(isDisplayed()))
 
-        // Click position 0
-        onView(withId(rvSearch)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(spinner)).perform(click())
 
-        // display
+        onView(withText("Spanish La Liga")).perform(click())
+
+        Thread.sleep(4000)
+
+        onView(withId(rvMatchEvent))
+            .check(matches(isDisplayed()))
+
+        onView(withId(rvMatchEvent)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                10,
+                click()
+            )
+        )
+
         onView(withId(imgFavorite))
             .check(matches(isDisplayed()))
 
-        // click add to favorite
+        onView(withId(imgFavorite)).perform(click())
+
+        pressBack()
+
+    }
+
+    // Submission 4 =>
+//    Instruments Testing untuk fitur pencarian
+    @Test
+    fun testSearchMatchBehaviour() {
+        onView(withId(textInputSearch)).check(matches(isDisplayed()))
+
+        onView(withId(textInputSearch)).perform(typeText("Barcelona"))
+
+        onView(withId(textInputSearch)).perform(pressKey(KeyEvent.KEYCODE_ENTER))
+
+        Thread.sleep(4000)
+
+        onView(withId(rvSearch))
+            .check(matches(isDisplayed()))
+
+        onView(withId(rvSearch)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                0,
+                click()
+            )
+        )
+
+        onView(withId(imgFavorite))
+            .check(matches(isDisplayed()))
+
         onView(withId(imgFavorite)).perform(click())
 
     }

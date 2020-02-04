@@ -11,7 +11,7 @@ import com.google.gson.Gson
 import com.man.hellosport.R
 import com.man.hellosport.model.league.LeagueResponse
 import com.man.hellosport.ui.adapter.LeagueAdapter
-import com.man.hellosport.ui.detail.league.LeagueActivity
+import com.man.hellosport.ui.league.LeagueActivity
 import com.man.hellosport.utils.LeagueUtils
 import kotlinx.android.synthetic.main.fragment_league.*
 import org.jetbrains.anko.support.v4.startActivity

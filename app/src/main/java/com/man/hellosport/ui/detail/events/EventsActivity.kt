@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.man.hellosport.R
-import com.man.hellosport.data.local.Favorite
+import com.man.hellosport.data.local.FavoriteMatch
 import com.man.hellosport.data.local.database
 import com.man.hellosport.data.network.ApiRepository
 import com.man.hellosport.model.event.Events
@@ -59,8 +59,8 @@ class EventsActivity : AppCompatActivity(),
     private fun checkFavorite(){
         try {
             database.use {
-                val result = select(Favorite.TABLE_FAVORITE)
-                    .whereArgs("(${Favorite.ID_EVENT} = {id})", "id" to data.idEvent!!)
+                val result = select(FavoriteMatch.TABLE_FAVORITE)
+                    .whereArgs("(${FavoriteMatch.ID_EVENT} = {id})", "id" to data.idEvent!!)
                 val eventFavorite = result.parseList(classParser<Events>())
                 favorite = eventFavorite.isNotEmpty()
                 setImgFavorite()
@@ -105,27 +105,27 @@ class EventsActivity : AppCompatActivity(),
         try{
           database.use {
                 insert(
-                    Favorite.TABLE_FAVORITE,
-                    Favorite.ID_EVENT to data.idEvent,
-                    Favorite.DATE_EVENT to data.dateEvent,
+                    FavoriteMatch.TABLE_FAVORITE,
+                    FavoriteMatch.ID_EVENT to data.idEvent,
+                    FavoriteMatch.DATE_EVENT to data.dateEvent,
 
-                    Favorite.HOME_TEAM_ID to data.idHomeTeam,
-                    Favorite.HOME_TEAM_NAME to data.strHomeTeam,
-                    Favorite.HOME_TEAM_SCORE to data.intHomeScore,
-                    Favorite.HOME_TEAM_GOALS to data.strHomeGoalDetails,
-                    Favorite.HOME_TEAM_GK to data.strHomeLineupGoalkeeper,
-                    Favorite.HOME_TEAM_DEF to data.strHomeLineupDefense,
-                    Favorite.HOME_TEAM_MID to data.strHomeLineupMidfield,
-                    Favorite.HOME_TEAM_FORW to data.strHomeLineupForward,
+                    FavoriteMatch.HOME_TEAM_ID to data.idHomeTeam,
+                    FavoriteMatch.HOME_TEAM_NAME to data.strHomeTeam,
+                    FavoriteMatch.HOME_TEAM_SCORE to data.intHomeScore,
+                    FavoriteMatch.HOME_TEAM_GOALS to data.strHomeGoalDetails,
+                    FavoriteMatch.HOME_TEAM_GK to data.strHomeLineupGoalkeeper,
+                    FavoriteMatch.HOME_TEAM_DEF to data.strHomeLineupDefense,
+                    FavoriteMatch.HOME_TEAM_MID to data.strHomeLineupMidfield,
+                    FavoriteMatch.HOME_TEAM_FORW to data.strHomeLineupForward,
 
-                    Favorite.AWAY_TEAM_ID to data.idAwayTeam,
-                    Favorite.AWAY_TEAM_NAME to data.strAwayTeam,
-                    Favorite.AWAY_TEAM_SCORE to data.intAwayScore,
-                    Favorite.AWAY_TEAM_GOALS to data.strAwayGoalDetails,
-                    Favorite.AWAY_TEAM_GK to data.strAwayLineupGoalkeeper,
-                    Favorite.AWAY_TEAM_DEF to data.strAwayLineupDefense,
-                    Favorite.AWAY_TEAM_MID to data.strAwayLineupMidfield,
-                    Favorite.AWAY_TEAM_FORW to data.strAwayLineupForward
+                    FavoriteMatch.AWAY_TEAM_ID to data.idAwayTeam,
+                    FavoriteMatch.AWAY_TEAM_NAME to data.strAwayTeam,
+                    FavoriteMatch.AWAY_TEAM_SCORE to data.intAwayScore,
+                    FavoriteMatch.AWAY_TEAM_GOALS to data.strAwayGoalDetails,
+                    FavoriteMatch.AWAY_TEAM_GK to data.strAwayLineupGoalkeeper,
+                    FavoriteMatch.AWAY_TEAM_DEF to data.strAwayLineupDefense,
+                    FavoriteMatch.AWAY_TEAM_MID to data.strAwayLineupMidfield,
+                    FavoriteMatch.AWAY_TEAM_FORW to data.strAwayLineupForward
                 )
             }
             toast("Data Berhasil di Simpan")
@@ -137,8 +137,8 @@ class EventsActivity : AppCompatActivity(),
     private fun removeDatabase(){
         try {
             database.use {
-                delete(Favorite.TABLE_FAVORITE,
-                    "(${Favorite.ID_EVENT} = {id})",
+                delete(FavoriteMatch.TABLE_FAVORITE,
+                    "(${FavoriteMatch.ID_EVENT} = {id})",
                     "id" to data.idEvent!!)
                 toast("Data Berhasil di Hapus")
             }

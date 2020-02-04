@@ -28,4 +28,20 @@ object TheSportdbApi {
         return BuildConfig.BASE_URL +
                 "searchevents.php?e=$query"
     }
+
+    fun getTeamsLeague(id: String): String {
+        return BuildConfig.BASE_URL +
+                "lookup_all_teams.php?id=$id"
+    }
+
+    fun getStandingLeague(id: String): String {
+        return BuildConfig.BASE_URL +
+                "lookuptable.php?l=$id"
+    }
+
+    fun getSearchTeams(query: String): String {
+        return BuildConfig.BASE_URL +
+                "searchteams.php?t=$query"
+    }
+
 }

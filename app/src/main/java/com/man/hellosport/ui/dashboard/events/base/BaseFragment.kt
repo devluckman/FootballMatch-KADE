@@ -1,4 +1,4 @@
-package com.man.hellosport.ui.base
+package com.man.hellosport.ui.dashboard.events.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.man.hellosport.ui.dashboard.favorite.FavoriteFragment"
+        android:name="com.man.hellosport.ui.dashboard.favorite.ContainerFavorite"
         android:label="@string/favorite"
         tools:layout="@layout/events_view" />
 

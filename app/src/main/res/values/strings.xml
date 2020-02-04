@@ -33,6 +33,17 @@
     <string name="search">Search</string>
     <string name="football_match">Football Match\n Version 1.0</string>
     <string name="title_pattern_mvvm">Football Match Use Design Pattern MVVM</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="detail_teams">Detail Teams</string>
+    <string name="stadium">Stadium :</string>
+    <string name="description">Description :</string>
+    <string name="no">No</string>
+    <string name="name">Name</string>
+    <string name="played">Played</string>
+    <string name="win">Win</string>
+    <string name="draw">Draw</string>
+    <string name="loss">Loss</string>
+    <string name="point">Point</string>
 
 
 </resources>
