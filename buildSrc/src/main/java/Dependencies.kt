@@ -51,7 +51,7 @@ object Dependencies {
     }
 
     object buildConfig {
-        val typeConfig = "Sting"
+        val typeConfig = "String"
         val nameConfig = "BASE_URL"
         val valueConfig = "\"https://www.thesportsdb.com/api/v1/json/1/\""
     }

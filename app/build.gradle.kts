@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins{
+plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
@@ -17,18 +17,18 @@ android {
         testInstrumentationRunner = Dependencies.Android.testInstrumentationRunner
         vectorDrawables.useSupportLibrary = Dependencies.Android.vectorDrawablesUseSupportLibrary
         buildConfigField(Dependencies.buildConfig.typeConfig,
-            Dependencies.buildConfig.nameConfig,
-            Dependencies.buildConfig.valueConfig)
+                Dependencies.buildConfig.nameConfig,
+                Dependencies.buildConfig.valueConfig)
 
 
     }
     buildTypes {
-        getByName("release"){
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    androidExtensions{
+    androidExtensions {
         isExperimental = true
     }
 
@@ -38,7 +38,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    tasks.withType<KotlinCompile>().configureEach {
+    tasks.withType < KotlinCompile > ().configureEach {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
@@ -50,11 +50,11 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Dependencies.kotlin.stdlib_jdk7)
+    api(Dependencies.kotlin.stdlib_jdk7)
     implementation(Dependencies.kotlin.coroutines)
 
-    implementation(Dependencies.supportLibs.appCompat)
-    implementation(Dependencies.supportLibs.constraintLayout)
+    api(Dependencies.supportLibs.appCompat)
+    api(Dependencies.supportLibs.constraintLayout)
     implementation(Dependencies.supportLibs.legacy)
     implementation(Dependencies.supportLibs.vectorDrawable)
     implementation(Dependencies.supportLibs.lifecycle)
@@ -86,5 +86,4 @@ dependencies {
     implementation(Dependencies.data.gson)
     //Eventbus
     implementation(Dependencies.data.eventbus)
-
 }
