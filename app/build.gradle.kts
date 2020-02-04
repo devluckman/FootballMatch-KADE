@@ -16,9 +16,9 @@ android {
         versionName = Dependencies.Android.versionName
         testInstrumentationRunner = Dependencies.Android.testInstrumentationRunner
         vectorDrawables.useSupportLibrary = Dependencies.Android.vectorDrawablesUseSupportLibrary
-        buildConfigField(Dependencies.buildConfig.typeConfig,
-                Dependencies.buildConfig.nameConfig,
-                Dependencies.buildConfig.valueConfig)
+        buildConfigField(Dependencies.BuildConfig.typeConfig,
+            Dependencies.BuildConfig.nameConfig,
+            Dependencies.BuildConfig.valueConfig)
 
 
     }
@@ -50,37 +50,42 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    api(Dependencies.kotlin.stdlib_jdk7)
-    implementation(Dependencies.kotlin.coroutines)
+    api(Dependencies.Kotlin.stdlib_jdk7)
+    implementation(Dependencies.Kotlin.coroutines)
 
-    api(Dependencies.supportLibs.appCompat)
-    api(Dependencies.supportLibs.constraintLayout)
-    implementation(Dependencies.supportLibs.legacy)
-    implementation(Dependencies.supportLibs.vectorDrawable)
-    implementation(Dependencies.supportLibs.lifecycle)
-    implementation(Dependencies.supportLibs.recyclerview)
-    implementation(Dependencies.supportLibs.viewpager2)
-    implementation(Dependencies.supportLibs.navigationFragment)
-    implementation(Dependencies.supportLibs.navigationUi)
+    api(Dependencies.SupportLibs.appCompat)
+    api(Dependencies.SupportLibs.constraintLayout)
+    implementation(Dependencies.SupportLibs.legacy)
+    implementation(Dependencies.SupportLibs.vectorDrawable)
+    implementation(Dependencies.SupportLibs.lifecycle)
+    implementation(Dependencies.SupportLibs.recyclerview)
+    implementation(Dependencies.SupportLibs.viewpager2)
+    implementation(Dependencies.SupportLibs.navigationFragment)
+    implementation(Dependencies.SupportLibs.navigationUi)
 
     //Denpedency Testing
-    testImplementation(Dependencies.testLibs.mockitoCore)
-    testImplementation(Dependencies.testLibs.mockitoInline)
-    testImplementation(Dependencies.testLibs.junit)
-    androidTestImplementation(Dependencies.testLibs.runner)
-    androidTestImplementation(Dependencies.testLibs.rules)
-    androidTestImplementation(Dependencies.testLibs.espresso)
+    testImplementation(Dependencies.TestLibs.mockitoCore)
+    testImplementation(Dependencies.TestLibs.mockitoInline)
+    testImplementation(Dependencies.TestLibs.junit)
+    androidTestImplementation(Dependencies.TestLibs.runner)
+    androidTestImplementation(Dependencies.TestLibs.rules)
+    androidTestImplementation(Dependencies.TestLibs.extJunit)
+    androidTestImplementation(Dependencies.TestLibs.espresso)
+    androidTestImplementation(Dependencies.TestLibs.espressoContrib)
+    androidTestImplementation(Dependencies.TestLibs.espressoContrib) {
+        exclude(group = "androidx", module = "appcompat")
+        exclude(group = "androidx", module = "recyclerview")
+    }
 
-    //anko
-    implementation(Dependencies.anko.core)
-    implementation(Dependencies.anko.coroutines)
-    implementation(Dependencies.anko.sqlite)
+    //Anko
+    implementation(Dependencies.Anko.core)
+    implementation(Dependencies.Anko.coroutines)
+    implementation(Dependencies.Anko.sqlite)
 
     //View
     implementation(Dependencies.view.material)
     implementation(Dependencies.view.picasso)
     implementation(Dependencies.view.autoimageslider)
-
 
     //Gson
     implementation(Dependencies.data.gson)

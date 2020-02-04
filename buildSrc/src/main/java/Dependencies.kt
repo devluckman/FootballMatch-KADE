@@ -16,6 +16,7 @@ private const val lifecycleVersion = "2.2.0"
 
 //test libs
 private const val junitVersion = "4.12"
+private const val extJunitVersion = "1.1.1"
 private const val runnerVersion = "1.2.0"
 private const val rulesVersion = "1.2.0"
 private const val espressoVersion = "3.2.0"
@@ -45,23 +46,23 @@ object Dependencies {
         val vectorDrawablesUseSupportLibrary = true
     }
 
-    object gradleProject{
+    object GradleProject{
         val androidGradle = "com.android.tools.build:gradle:$androidGradleVersion"
         val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 
-    object buildConfig {
+    object BuildConfig {
         val typeConfig = "String"
         val nameConfig = "BASE_URL"
         val valueConfig = "\"https://www.thesportsdb.com/api/v1/json/1/\""
     }
 
-    object kotlin {
+    object Kotlin {
         val stdlib_jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
-    object supportLibs {
+    object SupportLibs {
         val appCompat = "androidx.appcompat:appcompat:$appcompatVersion"
         val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
         val legacy = "androidx.legacy:legacy-support-v4:$legacySupportVersion"
@@ -75,17 +76,18 @@ object Dependencies {
         val lifecycle = "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     }
 
-    object testLibs {
+    object TestLibs {
         val junit = "junit:junit:$junitVersion"
+        val extJunit = "androidx.test.ext:junit:$extJunitVersion"
         val runner = "androidx.test:runner:$runnerVersion"
         val rules = "androidx.test:rules:$rulesVersion"
         val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
-
+        val espressoContrib = "androidx.test.espresso:espresso-contrib:$espressoVersion"
         val mockitoCore = "org.mockito:mockito-core:$mockitoVersion"
         val mockitoInline = "org.mockito:mockito-inline:$mockitoVersion"
     }
 
-    object anko {
+    object Anko {
         val core = "org.jetbrains.anko:anko:$ankoVersion"
         val coroutines = "org.jetbrains.anko:anko-coroutines:$ankoVersion"
         val sqlite = "org.jetbrains.anko:anko-sqlite:$ankoVersion"
